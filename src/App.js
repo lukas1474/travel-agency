@@ -24,8 +24,8 @@ import {AnimatedSwitch} from 'react-router-transition';
 class App extends React.Component {
   static propTypes = {
     trips: PropTypes.array,
-    countries: PropTypes.array,
-    regions: PropTypes.array,
+    countries: PropTypes.object,
+    regions: PropTypes.object,
     setStates: PropTypes.func,
   }
 
@@ -46,7 +46,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <MainLayout>
-          <AnimatedSwitch location={location} atEnter={{ opacity: 0 }} atLeave={{ opacity: 0 }} atActive={{ opacity: 1 }} className={styles.switchWrapper}>
+          <AnimatedSwitch atEnter={{ opacity: 0 }} atLeave={{ opacity: 0 }} atActive={{ opacity: 1 }} className={styles.switchWrapper}>
             <Route exact path='/' component={Home} />
             <Route exact path='/trips' component={Trips} />
             <Route exact path='/countries' component={Countries} />
