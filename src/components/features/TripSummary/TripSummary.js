@@ -14,11 +14,12 @@ const TripSummary = ({id, image, name, cost, days, tags}) => (
           <span>{days} days</span>
           <span>from {cost}</span>
         </div>
+        {tags !== [] &&
         <div className={styles.tags}>
           {tags.map(tag => (
             <span className={styles.tag} key={tag.toString()}>{tag}</span>
           ))}
-        </div>
+        </div>}
       </article>
     </Link>
   </Col>
@@ -28,7 +29,7 @@ TripSummary.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   image: PropTypes.string,
   name: PropTypes.string,
-  intro: PropTypes.string,
+  // intro: PropTypes.string,
   cost: PropTypes.string,
   days: PropTypes.number,
   tags: PropTypes.array,
