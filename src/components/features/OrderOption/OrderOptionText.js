@@ -5,7 +5,7 @@ import styles from './OrderOption.scss';
 
 
 const OrderOptionText = ({currentValue, setOptionValue}) => (
-  <div className={styles.number} input type="text">
+  <div className={styles.number}>
     <input
       className={styles.input}
       value={currentValue}
